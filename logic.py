@@ -1,8 +1,11 @@
 from pydub import AudioSegment
-from pygame import mixer # Load the required library
 
 class morse_logic():
+    """ Generate an mp3 Morse file and a Morse code text from a plain text input """
+
     def __init__(self):
+        """ Define/initialize the Morse code dictionary """
+
         self.CODE = {'A': '.-',    'B': '-...',   'C': '-.-.',
                     'D': '-..',    'E': '.',      'F': '..-.',
                     'G': '--.',    'H': '....',   'I': '..',
@@ -14,6 +17,7 @@ class morse_logic():
                     'Y': '-.--',   'Z': '--..'   }
 
     def process(self, msg):
+        """ Convert string input (text) to Morse code and save associate mp3 file """
 
         morse_msg = ''
         pause = AudioSegment.silent(duration=500)
